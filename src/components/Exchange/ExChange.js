@@ -2,8 +2,10 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 //import { Test } from './ExChange.styles';
 import LeftComponent from './leftComponent'
-import { Col, Row } from 'reactstrap';
-import Page from '../../components/Page';
+import { Col, Row, Container, CardHeader, } from 'reactstrap';
+import RightComponent from './rightComponent';
+import MidelComponent from './midelComponent';
+import HeaderLeftComponent from './headerLeftComponent';
 
 class ExChange extends PureComponent {
   constructor(props) {
@@ -47,21 +49,22 @@ class ExChange extends PureComponent {
     return (
       // <Page title="ExChange" breadcrumbs={[{ name: 'ExChange', active: true }]} >
 
-      <Page >
-        <Row>
-          <Col xl={8} lg={6} md={12} sm={6}   className="">
-            <LeftComponent />
+      <Container className="themed-container" fluid={true}>
+        <Row xs="1" sm="2" md="4">
+          <Col lg="9" md="12" sm="12" xs="12" className="">
+            <Row xs="1" sm="2" md="4">
+              <Col md="12">
+                <HeaderLeftComponent />
+              </Col>
+              <Col lg="9" xs="12"><LeftComponent /></Col>
+              <Col><MidelComponent /></Col>
+            </Row>
           </Col>
-          <Col  xl={2} lg={3} md={6} sm={3} className="bg-success">
-          2
-
-          </Col>
-          <Col xl={2} lg={3} md={6} sm={3} className="bg-primary">
-          3
-
+          <Col lg="3" md="12" sm="12" xs="12" className="">
+            <RightComponent />
           </Col>
         </Row>
-      </Page>
+      </Container>
     );
   }
 }

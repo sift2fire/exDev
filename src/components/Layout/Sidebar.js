@@ -38,7 +38,6 @@ import {
 import bn from 'utils/bemnames';
 
 const sidebarBackground = {
-  backgroundImage: `url("${sidebarBgImage}")`,
   backgroundSize: 'cover',
   backgroundRepeat: 'no-repeat',
 };
@@ -114,18 +113,9 @@ class Sidebar extends React.Component {
         <div className={bem.e('background')} style={sidebarBackground} />
         <div className={bem.e('content')}>
           <Navbar>
-            <SourceLink className="navbar-brand d-flex">
-              <img
-                src={logo200Image}
-                width="40"
-                height="30"
-                className="pr-2"
-                alt=""
-              />
-              <span className="text-white">
-                Reduction <FaGithub />
+          <span className="text-white">
+                ExChange 
               </span>
-            </SourceLink>
           </Navbar>
           <Nav vertical>
             {navItems.map(({ to, name, exact, Icon }, index) => (

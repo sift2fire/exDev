@@ -64,7 +64,7 @@ class DashboardPage extends React.Component {
     return (
       <Page
         className="DashboardPage"
-        title="Dashboard"
+        title="Dashboardnn"
         breadcrumbs={[{ name: 'Dashboard', active: true }]}
       >
         <Row>
