@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react';
-
+import TabsInside from './tabsInside'
 import {
     Button,
     Card,
@@ -46,14 +46,17 @@ const MyCard = (props) => {
                     </Nav>
                 </CardHeader>
                 <CardBody>
+                    
                     <TabContent activeTab={activeTab}>
                         <TabPane tabId="BUY">
                             <BUYContent email={email} setEmail={setEmail} />
                         </TabPane>
                         <TabPane tabId="Sell">
                             <SellContent email={email} setEmail={setEmail} />
+                            
                         </TabPane>
                     </TabContent>
+                    
                 </CardBody>
             </>
         </div>
@@ -64,39 +67,7 @@ const BUYContent = (props) => {
         <React.Fragment>
             <small>USD 0.000000001</small>
             <Form className="text-left">
-                <FormGroup row>
-                    <Col md="4">
-                        <Label for="exampleEmail">Email</Label>
-                    </Col>
-                    <Col md="8">
-                        <Input
-                            type="email"
-                            name="email"
-                            id="exampleEmail"
-                            placeholder="email@example.com"
-                            value={props.email}
-                            onChange={e => props.setEmail(e.target.value)}
-                        />
-                    </Col>
-                </FormGroup>
-
-                <FormGroup row>
-                    <Col md="4">
-                        <Label for="examplePassword">Password</Label>
-                    </Col>
-                    <Col md="8">
-                        <Input type="password" name="password" id="examplePassword" placeholder="password" />
-                    </Col>
-                </FormGroup>
-
-                <FormGroup row>
-                    <Col md="4">
-                        <Label for="examplePassword">Confirm Password</Label>
-                    </Col>
-                    <Col md="8">
-                        <Input type="password" name="password" id="examplePassword" placeholder="password" />
-                    </Col>
-                </FormGroup>
+                
                 <Button className="btn btn-success btn-block" color="primary" block>Margin Buy BTC</Button>
             </Form>
         </React.Fragment>
@@ -108,29 +79,7 @@ const SellContent = (props) => {
         <React.Fragment>
             <small>BTC 0.000000001</small>
             <Form className="text-left">
-                <FormGroup row>
-                    <Col md="4">
-                        <Label for="exampleEmail">Email</Label>
-                    </Col>
-                    <Col md="8">
-                        <Input
-                            type="email"
-                            name="email"
-                            id="exampleEmail"
-                            placeholder="with a placeholder"
-                            value={props.email}
-                            onChange={e => props.setEmail(e.target.value)}
-                        />
-                    </Col>
-                </FormGroup>
-                <FormGroup row>
-                    <Col md="4">
-                        <Label for="examplePassword">Password</Label>
-                    </Col>
-                    <Col md="8">
-                        <Input type="password" name="password" id="examplePassword" placeholder="password placeholder" />
-                    </Col>
-                </FormGroup>
+                <TabsInside/>
                 <Button className="btn btn-danger btn-block" color="primary" block>Margin Sell BTC</Button>
             </Form>
         </React.Fragment>
