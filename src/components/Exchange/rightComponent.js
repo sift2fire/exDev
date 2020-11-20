@@ -1,4 +1,5 @@
 import React, { PureComponent } from 'react';
+import RightCTabs from '../UseComponent/rightCTabs'
 import {
     Alert, Button,
     CardBody, CardHeader,
@@ -27,13 +28,15 @@ class RightComponent extends PureComponent {
             return <CardHeader>{pm}</CardHeader>
         }
         return (
+            <>
+                <RightCTabs/>
+                <Card body>
+                    <CardTitle tag="h5">Special Title Treatment</CardTitle>
+                    <CardText>With supporting text below as a natural lead-in to additional content.</CardText>
+                    <Button>Go somewhere</Button>
+                </Card>
+            </>
 
-            <Card body>
-                <CardTitle tag="h5">Special Title Treatment</CardTitle>
-                <CardText>With supporting text below as a natural lead-in to additional content.</CardText>
-                <Button>Go somewhere</Button>
-            </Card>
-            
         );
     }
 }
